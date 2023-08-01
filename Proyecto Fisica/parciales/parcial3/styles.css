@@ -1,0 +1,274 @@
+body{
+    background-color: #2B3467;
+}
+h1{
+    color: white;
+    font-size: 30px;
+    font-family: 'Golos Text', sans-serif;
+}
+h2{
+    color: white;
+    font-size: 16px;
+    font-family: 'Golos Text', sans-serif;
+}
+p{
+    color: white;
+    font-family: 'Golos Text', sans-serif;
+}
+
+#pagina-principal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+}
+button{
+    background-color: #FCFFE7;
+    border: #FCFFE7 2px solid;
+    color: black;
+    width: 100px;
+    height: 30px;
+    border-radius: 20px
+}
+#seleccionar-parcial{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+#parciales{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.cajas-parciales{
+    display: flex;
+    width: 180px;
+    height: 130px;
+    border: 2px solid white;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    padding-left: 15px;
+}
+img{
+    width: 100px;
+}
+#logo{
+    width: 175px;
+}
+/*-----------------Diseño mobile----------------------------*/
+* {
+    margin: 0;
+    box-sizing: border-box;
+    }
+    
+    body {
+    font-family: sans-serif;
+    padding: 90px 20px 0;
+    }
+    
+    .header {
+    background-color: #2B3467;
+    height: 80px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    border-bottom: groove;
+    border-color: #3b4581;
+    }
+    
+    .nav {
+    display: flex;
+    justify-content: space-between;
+    
+    
+    margin: 0 auto;
+    }
+    
+    .nav-link {
+    color: white;
+    text-decoration: none;
+    }
+    
+    .logo {
+    font-size: 30px;
+    font-weight: bold;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 80px;
+    line-height: 80px;
+    }
+    
+    .nav-menu {
+    display: flex;
+    
+    list-style: none;
+    }
+    
+    .nav-menu-item {
+    font-size: 18px;
+    margin: 0 10px;
+    line-height: 80px;
+    text-transform: uppercase;
+    width: max-content;
+    }
+    
+    .nav-menu-link {
+    padding: 8px 12px;
+    border-radius: 3px;
+    }
+    
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+    background-color: #034574;
+    transition: 0.5s;
+    }
+    
+    /* TOGGLE */
+  .nav-toggle {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0 20px;
+    line-height: 60px;
+    cursor: pointer;
+    
+    display: none;
+    }
+    
+      h1{
+      color: white;
+      font-size: 30px;
+      font-family: 'Golos Text', sans-serif;
+      }
+      h2{
+          color: white;
+          font-size: 16px;
+          font-family: 'Golos Text', sans-serif;
+      }
+      p{
+          color: white;
+          font-family: 'Golos Text', sans-serif;
+      }
+      #pagina-principal{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-top: 200px;
+      }
+      #boton-inicia{
+          background-color: #FCFFE7;
+          border: #FCFFE7 2px solid;
+          color: black;
+          width: 150px;
+          height: 50px;
+          border-radius: 20px
+      }
+      #seleccionar-parcial{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding-top: 100px;
+      }
+      #parciales{
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          gap: 2rem;
+      }
+      #seleccionar-parcial{
+        padding-bottom: 50px;
+        text-align: center;
+      }
+      .cajas-parciales{
+          display: flex;
+          width: 180px;
+          height: 130px;
+          border: 2px solid white;
+          text-align: center;
+          align-items: center;
+          border-radius: 10px;
+          padding-left: 15px;
+      }
+      img{
+          width: 100px;
+      }
+      #logo{
+          width: 175px;
+      }
+    /* MOBILE */
+    @media (max-width: 768px) {
+      body {
+        padding-top: 70px;
+        
+      }
+    
+      .header {
+        height: 60px;
+      }
+    
+      .logo {
+        font-size: 25px;
+        padding: 0 20px;
+        line-height: 60px;
+      }
+    
+      .nav-menu {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+        background-color: #2c3e50;
+        position: fixed;
+        top: 60px;
+        width: 100%;
+        padding: 20px 0;
+    
+        height: calc(100% - 60px);
+        overflow-y: auto;
+    
+        left: 100%;
+        transition: left 0.3s;
+      }
+    
+      .nav-menu-item {
+        line-height: 70px;
+      }
+    
+      .nav-menu-link:hover,
+      .nav-menu-link_active {
+        background: none;
+        color: #83c5f7;
+      }
+    
+      .nav-toggle {
+        display: block;
+      }
+    
+      .nav-menu_visible {
+        left: 0;
+      }
+    
+      .nav-toggle:focus:not(:focus-visible) {
+        outline: none;
+      }
+      #seleccionar-parcial{
+        padding-top: 25px;
+        padding-bottom: 30px;
+        text-align: center;
+      }
+      #parciales{
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 50px;
+      }
+    }
