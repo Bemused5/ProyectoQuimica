@@ -11,14 +11,14 @@ padding: 90px 20px 0;
 }
 
 .header {
-background-color: #2B3467;
+background-color: white;
 height: 80px;
 position: fixed;
 width: 100%;
 top: 0;
 left: 0;
 border-bottom: groove;
-border-color: #3b4581;
+border-color: whitesmoke;
 }
 
 .nav {
@@ -30,7 +30,7 @@ margin: 0 auto;
 }
 
 .nav-link {
-color: white;
+color: black;
 text-decoration: none;
 }
 
@@ -81,20 +81,20 @@ cursor: pointer;
 display: none;
 }
 body{
-background-color: #2B3467;
+background-color: white;
 }
 h1{
-    color: white;
+    color: black;
     font-size: 30px;
     font-family: 'Golos Text', sans-serif;
 }
 h2{
-    color: white;
+    color: black;
     font-size: 16px;
     font-family: 'Golos Text', sans-serif;
 }
 p{
-    color: white;
+    color: black;
     font-family: 'Golos Text', sans-serif;
 }
 
@@ -112,9 +112,9 @@ p{
     gap: 3rem;
 }
 #boton-inicia{
-    background-color: #FCFFE7;
+    background-color: black;
     border: #FCFFE7 2px solid;
-    color: black;
+    color: white;
     width: 150px;
     height: 50px;
     border-radius: 20px
