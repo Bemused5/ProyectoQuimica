@@ -138,7 +138,7 @@ p{
     display: flex;
     width: 180px;
     height: 130px;
-    border: 2px solid white;
+    border: 2px solid gray;
     text-align: center;
     align-items: center;
     border-radius: 10px;
@@ -148,7 +148,7 @@ img{
     width: 100px;
 }
 #logo{
-    width: 300px;
+    width: 0px;
 }
   /* MOBILE */
   @media (max-width: 768px) {
