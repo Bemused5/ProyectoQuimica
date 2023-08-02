@@ -148,7 +148,7 @@ img{
     width: 100px;
 }
 #logo{
-    width: 0px;
+    width: 300px;
 }
   /* MOBILE */
   @media (max-width: 768px) {
