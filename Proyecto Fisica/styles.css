@@ -103,7 +103,7 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 75px;
+    padding-top: 50px;
     gap: 1.5rem;
 }
 #data-student{
@@ -148,7 +148,7 @@ img{
     width: 100px;
 }
 #logo{
-    width: 175px;
+    width: 300px;
 }
   /* MOBILE */
   @media (max-width: 768px) {
