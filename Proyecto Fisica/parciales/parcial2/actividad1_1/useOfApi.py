@@ -3,6 +3,7 @@ import openai
 from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 openai.api_key = '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'
 
@@ -16,7 +17,7 @@ def get_gpt_response():
         messages=[
             {
                 "role": "system",
-                "content": user_message
+                "content": "You are a helpful assistant."
             },
             {
                 "role": "user",
