@@ -15,6 +15,10 @@ p{
   color: black;
   font-family: 'Golos Text', sans-serif;
 }
+main{
+  display: flex ;
+  justify-content: space-between;
+}
 
 #pagina-principal{
   display: flex;
@@ -75,6 +79,38 @@ display: flex;
 }
 .answer{
 padding-left: 30px;
+}
+.left-menu{
+  width: 20%;
+  padding: 10px;
+  border-right: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.left-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.left-menu ul li {
+  margin-bottom: 10px;
+}
+
+.left-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.left-menu ul li a:hover {
+  background-color: #f4f4f4;
+}
+
+.main-content {
+  width: 80%;
+  padding: 10px;
+  box-sizing: border-box;
 }
 .text-space{
 width: 75%;
