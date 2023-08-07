@@ -16,6 +16,26 @@
         src="https://kit.fontawesome.com/7e5b2d153f.js"
         crossorigin="anonymous"
         ></script>
+        <script>
+          document.getElementById("boton-verificar").addEventListener("click", function() {
+              let message = "Explain what programming is in a simple and friendly way for beginners.";  // Aquí debes adaptar según tus necesidades.
+              fetch('http://localhost:5000/get_gpt_response', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({message: message}),
+              })
+              .then(response => response.json())
+              .then(data => {
+                  document.getElementById("resultado").textContent = data.message;
+              })
+              .catch((error) => {
+                  console.error('Error:', error);
+              });
+          });
+      </script>
+      
     </head>
     <body>
         <header class="header">
