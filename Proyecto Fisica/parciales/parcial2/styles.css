@@ -15,7 +15,7 @@ p{
   color: black;
   font-family: 'Golos Text', sans-serif;
 }
-main{
+main {
   display: flex ;
   justify-content: space-between;
 }
@@ -81,7 +81,7 @@ display: flex;
 padding-left: 30px;
 }
 .left-menu{
-  width: 20%;
+  width: 15%;
   padding: 10px;
   border-right: 1px solid #ccc;
   box-sizing: border-box;
@@ -108,9 +108,10 @@ padding-left: 30px;
 }
 
 .main-content {
-  width: 80%;
+  width: 85%;
   padding: 10px;
   box-sizing: border-box;
+  text-align: center;
 }
 .text-space{
 width: 75%;
