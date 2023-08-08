@@ -28,10 +28,10 @@ main {
   padding-top: 200px;
 }
 button{
-  background-color: #FCFFE7;
+  background-color: #00DFA2;
   border: #FCFFE7 2px solid;
   color: black;
-  width: 100px;
+  width: 200px;
   height: 30px;
   border-radius: 20px
 }
