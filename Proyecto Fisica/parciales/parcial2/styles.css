@@ -72,13 +72,17 @@ align-items: center;
 padding-top: 50px;
 }
 .answer-area{
-display: flex;
-  flex-direction: row;
+  display: flex;
+  justify-self: flex-end;
   gap: 0.5rem;
-  align-items: center;
+  align-items: right;
+  text-align: right;
 }
 .answer{
-padding-left: 30px;
+  padding-left: 0px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
 }
 .left-menu{
   width: 15%;
