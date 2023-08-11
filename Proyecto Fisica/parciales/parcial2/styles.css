@@ -125,15 +125,18 @@ color: white;
 }
 
 #resultado{
-display: flex;
-background-color: #0079FF;
-color: white;
-padding-left: 25px;
-height: 50px;
-align-items: center;
-padding-right: 25px;
-border-radius: 20px;
+  display: inline-flex;
+  background-color: #0079FF;
+  color: white;
+  padding: 25px 25px;
+  height: auto;
+  min-height: 50px;
+  align-items:flex-start;
+  border-radius: 20px;
+  white-space: pre-wrap;
+  text-align: justify;
 }
+
 /*-----------------Diseño mobile----------------------------*/
 * {
   margin: 0;
