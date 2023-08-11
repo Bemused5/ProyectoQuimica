@@ -128,11 +128,14 @@ padding-top: 50px;
   background-color: #f4f4f4;
 }
 
+.text-centered {
+  text-align: center;
+}
+
 .main-content {
   width: 85%;
   padding: 10px;
   box-sizing: border-box;
-  text-align: center;
 }
 .text-space{
 width: 75%;
@@ -140,6 +143,8 @@ width: 75%;
 label{
 color: white;
 }
+
+
 
 #resultado{
   display: inline-flex;
