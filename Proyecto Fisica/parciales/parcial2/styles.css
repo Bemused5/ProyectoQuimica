@@ -158,14 +158,26 @@ color: white;
   white-space: pre-wrap;
   text-align: justify;
 }
-.user-input-section {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  margin-top: 20px;
-  padding: 10px;
-  border-top: 1px solid #ccc;
+/* Estilo para fijar la barra de entrada en la parte inferior */
+.footer-input {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white; /* Asegúrate de que esta coincida con el color de fondo de tu diseño */
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1); /* Agrega una pequeña sombra para dar profundidad */
+  z-index: 1000; /* Esto garantiza que la barra se muestre por encima de otros elementos */
+  padding: 10px; /* Un poco de espacio alrededor de la barra */
 }
+
+/* Estilo para el área de texto que se expande */
+.expandable-textarea {
+  max-height: calc(100% / 4); /* Ajusta para que no supere 1/4 de la altura de la vista */
+  overflow-y: auto; /* Esto permitirá que se desplace si el contenido excede el máximo */
+  width: 95%; /* Ajusta según lo necesites, el 90% es solo un ejemplo */
+  resize: none; /* Esto evita que los usuarios cambien manualmente el tamaño del área de texto */
+}
+
 
 #userInput {
   flex: 1; 
