@@ -28,12 +28,29 @@ main {
   padding-top: 200px;
 }
 button{
+  font-family: 'Golos Text', sans-serif;
+  font-size: 16px;
   background-color: #00DFA2;
   border: #FCFFE7 2px solid;
-  color: black;
+  color: white;
+  font-style: bold;
   width: 200px;
   height: 50px;
-  border-radius: 20px
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+button:hover {
+  background-color: #02b57f;  /* Un color más oscuro para el efecto hover */
+}
+
+button:focus {
+  outline: none;  /* Elimina el borde azul que aparece al hacer clic en el botón */
+}
+.sendbutton{
+  width: auto;
+  height: auto;
+  padding: 10px;
 }
 #seleccionar-parcial{
   display: flex;
@@ -136,6 +153,21 @@ color: white;
   white-space: pre-wrap;
   text-align: justify;
 }
+.user-input-section {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  margin-top: 20px;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+#userInput {
+  flex: 1; 
+  margin-right: 10px;
+  padding: 5px;
+}
+
 
 /*-----------------Diseño mobile----------------------------*/
 * {

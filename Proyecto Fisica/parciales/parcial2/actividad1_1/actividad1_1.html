@@ -63,30 +63,41 @@
             </section>
             <br><br><br>
             <section id="resultado-1-1-2">
-                <p><span id="resultado">s</span></p>
+              <p><span id="resultado"></span></p>
             </section>
           </section>
-          
+          <section class="user-input-section">
+            <input type="text" id="userInput" placeholder="Escribe tu pregunta aquí..." />
+            <button onclick="sendUserQuery()" title="Enviar" class="sendbutton"><i class="fas fa-paper-plane"></i></button>
+          </section>
         </main>
         
         <script>
           function fetchGptResponse() {
-              let message = "Explain what programming is in a simple and friendly way for beginners.";  // Adapt this according to your needs.
-              fetch('http://localhost:5000/get_gpt_response', {
-                  method: 'POST',
-                  headers: {
-                      'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify({ message: message }),
-              })
-              .then(response => response.json())
-              .then(data => {
-                  document.getElementById("resultado").textContent = data.message;
-              })
-              .catch((error) => {
-                  console.error('Error:', error);
-              });
+          // Establece el mensaje inicial cuando se hace clic en el botón
+          document.getElementById("resultado").textContent = "Esperando respuesta...";
+
+          let message = "Explain what programming is in a simple and friendly way for beginners.";
+
+          fetch('http://localhost:5000/get_gpt_response', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ message: message }),
+          })
+          .then(response => response.json())
+          .then(data => {
+              // Actualiza el contenido del span con la respuesta de la API
+              document.getElementById("resultado").textContent = data.message;
+          })
+          .catch((error) => {
+              // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
+              document.getElementById("resultado").textContent = "Hubo un error al obtener la respuesta.";
+              console.error('Error:', error);
+          });
           }
+
       </script>
     </body>
 </html>
