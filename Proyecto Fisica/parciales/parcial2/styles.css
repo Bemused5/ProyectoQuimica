@@ -104,7 +104,6 @@ padding-top: 50px;
 .left-menu{
   width: 15%;
   padding: 10px;
-  border-right: 1px solid #ccc;
   box-sizing: border-box;
 }
 .left-menu ul {
@@ -162,8 +161,8 @@ color: white;
 .footer-input {
   position: fixed;
   bottom: 0;
-  left: 0;
-  width: 100%;
+  right: 0;
+  width: 83.7%;
   background-color: white; /* Asegúrate de que esta coincida con el color de fondo de tu diseño */
   box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1); /* Agrega una pequeña sombra para dar profundidad */
   z-index: 1000; /* Esto garantiza que la barra se muestre por encima de otros elementos */
