@@ -134,7 +134,10 @@ padding-top: 50px;
 .main-content {
   width: 85%;
   padding: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 70px; /* Esto crea un espacio en la parte inferior, que es donde la barra de entrada se superpondría */
   box-sizing: border-box;
+  overflow-y: auto; /* Esto permite que el contenido se desplace si excede el alto de la ventana */
 }
 .text-space{
 width: 75%;
@@ -146,7 +149,7 @@ color: white;
 
 
 #resultado{
-  display: inline-flex;
+  display: none;
   background-color: #0079FF;
   color: white;
   padding: 25px 25px;
@@ -167,6 +170,7 @@ color: white;
   box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1); /* Agrega una pequeña sombra para dar profundidad */
   z-index: 1000; /* Esto garantiza que la barra se muestre por encima de otros elementos */
   padding: 10px; /* Un poco de espacio alrededor de la barra */
+  border-top: 1px solid #e0e0e0; /* Agrega un borde sutil en la parte superior para diferenciarlo del contenido */
 }
 
 /* Estilo para el área de texto que se expande */

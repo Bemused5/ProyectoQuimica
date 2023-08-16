@@ -62,6 +62,7 @@
             </section>
             <br><br><br>
             <section id="chat-area" style="display: flex; flex-direction: column;">
+              <img id="robot-gif" src="/Proyecto Fisica/assets/robot.gif" alt="Robot esperando">
               <section id="resultado-1-1-2">
                   <p><span id="resultado">S</span></p>
               </section>
@@ -78,10 +79,13 @@
         
         <script>
           function fetchGptResponse() {
+          // Ocultar el GIF y mostrar el span
+          document.getElementById("robot-gif").style.display = "none";
+          document.getElementById("resultado").style.display = "inline-block";
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado").textContent = "Esperando respuesta...";
 
-          let message = "Simula que eres un profesor de quimica de universidad, y a su vez estas enseñando a jovenes que no comprenden mucho acerca de la quimica, da una definicion de la quimica y una breve explicacion de las divisiones que hay en la quimica";
+          let message = "Da una definicion de la quimica y una breve explicacion de las divisiones que hay en la quimica";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',
