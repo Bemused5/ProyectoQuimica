@@ -160,6 +160,18 @@ color: white;
   white-space: pre-wrap;
   text-align: justify;
 }
+#resultado2{
+  display: none;
+  background-color: #0079FF;
+  color: white;
+  padding: 25px 25px;
+  height: auto;
+  min-height: 50px;
+  align-items:flex-start;
+  border-radius: 20px;
+  white-space: pre-wrap;
+  text-align: justify;
+}
 /* Estilo para fijar la barra de entrada en la parte inferior */
 .footer-input {
   position: fixed;
