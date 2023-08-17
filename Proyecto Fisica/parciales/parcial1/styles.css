@@ -443,5 +443,15 @@ color: white;
     .left-menu, .actividad {
         width: 100%;
     }
+    .footer-input {
+      width: 100%;
+    }
+    .left-menu ul {
 
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; /* esto distribuirá el espacio entre los ítems */
+      list-style-type: none; /* esto eliminará los puntos del listado */
+      padding: 0; /* esto eliminará el padding predeterminado del listado */
+  }
   }
