@@ -172,6 +172,19 @@ color: white;
   white-space: pre-wrap;
   text-align: justify;
 }
+
+#resultado3{
+  display: none;
+  background-color: #0079FF;
+  color: white;
+  padding: 25px 25px;
+  height: auto;
+  min-height: 50px;
+  align-items:flex-start;
+  border-radius: 20px;
+  white-space: pre-wrap;
+  text-align: justify;
+}
 /* Estilo para fijar la barra de entrada en la parte inferior */
 .footer-input {
   position: fixed;
@@ -347,7 +360,7 @@ color: white;
         width: 175px;
     }
   /* MOBILE */
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     body {
       padding-top: 70px;
       

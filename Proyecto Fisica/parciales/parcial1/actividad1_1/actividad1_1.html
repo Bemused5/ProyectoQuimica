@@ -82,10 +82,15 @@
             <br><br><br>
             <section class="answer-area">
               <section class="answer">
-                  <button id="boton-continuar2" style="display: none;" onclick="continueClass()">Continuar con la clase</button>
+                  <button id="boton-continuar2" style="display: none;" onclick="finishClass()">Continuar con la clase</button>
               </section>
             </section>
-          
+            <br><br><br>
+            <section id="chat-area" style="display: flex; flex-direction: column;">
+              <section id="resultado-1-1-2">
+                  <p><span id="resultado3">S</span></p>
+              </section>
+            </section>
 
           <div class="footer-input">
             <textarea class="expandable-textarea" placeholder="Escribe tu pregunta aquí..."></textarea>
@@ -120,6 +125,12 @@
 
               // Mostrar el botón de "Continuar con la clase" si la respuesta es exitosa
               document.getElementById("boton-continuar").style.display = "inline-block";
+
+              // Desactiva el botón
+              document.getElementById("boton-verificar").setAttribute("disabled", "disabled");
+
+              // Cambia el estilo del botón para que se vea desactivado
+              document.getElementById("boton-verificar").style.opacity = 0.5;
           })
           .catch((error) => {
               // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
@@ -152,6 +163,12 @@
 
               // Mostrar el botón de "Continuar con la clase" si la respuesta es exitosa
               document.getElementById("boton-continuar2").style.display = "inline-block";
+
+              // Desactiva el botón
+              document.getElementById("boton-continuar").setAttribute("disabled", "disabled");
+
+              // Opcional: Cambia el estilo del botón para que se vea desactivado
+              document.getElementById("boton-continuar").style.opacity = 0.5;
           })
           .catch((error) => {
               // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
@@ -163,6 +180,39 @@
           });
         }
 
+        function finishClass() {
+          // Ocultar el GIF y mostrar el span
+          document.getElementById("resultado3").style.display = "inline-block";
+          // Establece el mensaje inicial cuando se hace clic en el botón
+          document.getElementById("resultado3").textContent = "Esperando respuesta...";
+
+          let message = "Da los distintos sistemas de unidades que pueden ser usados en la quimica, asi como de que tipo son";
+
+          fetch('http://localhost:5000/get_gpt_response', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ message: message }),
+          })
+          .then(response => response.json())
+          .then(data => {
+              // Actualiza el contenido del span con la respuesta de la API
+              document.getElementById("resultado3").textContent = data.message;
+
+              // Desactiva el botón
+              document.getElementById("boton-continuar2").setAttribute("disabled", "disabled");
+
+              // Opcional: Cambia el estilo del botón para que se vea desactivado
+              document.getElementById("boton-continuar2").style.opacity = 0.5;
+          })
+          .catch((error) => {
+              // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
+              document.getElementById("resultado3").textContent = "Hubo un error al obtener la respuesta.";
+              console.error('Error:', error);
+
+          });
+        }
       </script>
     </body>
 </html>
