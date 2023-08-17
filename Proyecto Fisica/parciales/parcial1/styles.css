@@ -213,6 +213,18 @@ color: white;
   padding: 5px;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-menu {
+  width: 20%; /* o la medida que prefieras */
+}
+
+.actividad {
+  width: 80%; /* o la medida que prefieras */
+}
 
 /*-----------------Diseño mobile----------------------------*/
 * {
@@ -424,4 +436,12 @@ color: white;
       flex-direction: column;
       padding-bottom: 50px;
     }
+    .main-container {
+      flex-direction: column;
+    }
+
+    .left-menu, .actividad {
+        width: 100%;
+    }
+
   }

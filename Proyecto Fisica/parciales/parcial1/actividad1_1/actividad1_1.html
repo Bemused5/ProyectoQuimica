@@ -40,8 +40,7 @@
               </ul>
             </nav>
         </header>
-        <main class="actividad">
-           <!-- Menú a la izquierda -->
+        <div class="main-container">
           <aside class="left-menu">
             <ul>
                 <li><a href="#unidad1">Unidad 1</a></li>
@@ -50,56 +49,59 @@
                 <!-- Agrega más unidades según lo necesites -->
             </ul>
           </aside>
+          <main class="actividad">
           
-          <!-- Contenido principal -->
-          <section class="main-content">
-            <h1 class="text-centered">Unidad 1 Primer Parcial</h1>
-            <br><br>
-            <section class="answer-area">
-                <section class="answer">
-                    <button id="boton-verificar" onclick="fetchGptResponse()">Iniciar unidad 1</button>
+            <!-- Contenido principal -->
+            <section class="main-content">
+              <h1 class="text-centered">Unidad 1 Primer Parcial</h1>
+              <br><br>
+              <section class="answer-area">
+                  <section class="answer">
+                      <button id="boton-verificar" onclick="fetchGptResponse()">Iniciar unidad 1</button>
+                  </section>
+              </section>
+              <br><br><br>
+              <section id="chat-area" style="display: flex; flex-direction: column;">
+                <img id="robot-gif" src="/Proyecto Fisica/assets/robot.gif" alt="Robot esperando">
+                <section id="resultado-1-1-2">
+                    <p><span id="resultado">S</span></p>
                 </section>
-            </section>
-            <br><br><br>
-            <section id="chat-area" style="display: flex; flex-direction: column;">
-              <img id="robot-gif" src="/Proyecto Fisica/assets/robot.gif" alt="Robot esperando">
-              <section id="resultado-1-1-2">
-                  <p><span id="resultado">S</span></p>
               </section>
-            </section>
-            <br><br><br>
-            <section class="answer-area">
-              <section class="answer">
-                  <button id="boton-continuar" style="display: none;" onclick="continueClass()">Continuar con la clase</button>
+              <br><br><br>
+              <section class="answer-area">
+                <section class="answer">
+                    <button id="boton-continuar" style="display: none;" onclick="continueClass()">Continuar con la clase</button>
+                </section>
               </section>
-            </section>
-            <br><br><br>
-            <section id="chat-area" style="display: flex; flex-direction: column;">
-              <section id="resultado-1-1-2">
-                  <p><span id="resultado2">S</span></p>
+              <br><br><br>
+              <section id="chat-area" style="display: flex; flex-direction: column;">
+                <section id="resultado-1-1-2">
+                    <p><span id="resultado2">S</span></p>
+                </section>
               </section>
-            </section>
-            <br><br><br>
-            <section class="answer-area">
-              <section class="answer">
-                  <button id="boton-continuar2" style="display: none;" onclick="finishClass()">Continuar con la clase</button>
+              <br><br><br>
+              <section class="answer-area">
+                <section class="answer">
+                    <button id="boton-continuar2" style="display: none;" onclick="finishClass()">Continuar con la clase</button>
+                </section>
               </section>
-            </section>
-            <br><br><br>
-            <section id="chat-area" style="display: flex; flex-direction: column;">
-              <section id="resultado-1-1-2">
-                  <p><span id="resultado3">S</span></p>
+              <br><br><br>
+              <section id="chat-area" style="display: flex; flex-direction: column;">
+                <section id="resultado-1-1-2">
+                    <p><span id="resultado3">S</span></p>
+                </section>
               </section>
-            </section>
-
-          <div class="footer-input">
-            <textarea class="expandable-textarea" placeholder="Escribe tu pregunta aquí..."></textarea>
-            <button onclick="sendUserQuery()" title="Enviar" class="sendbutton"><i class="fas fa-paper-plane"></i></button>
-          </div>
-        
-          </section>
+  
+            <div class="footer-input">
+              <textarea class="expandable-textarea" placeholder="Escribe tu pregunta aquí..."></textarea>
+              <button onclick="sendUserQuery()" title="Enviar" class="sendbutton"><i class="fas fa-paper-plane"></i></button>
+            </div>
           
-        </main>
+            </section>
+            
+          </main>
+        </div>
+        
         
         <script>
           function fetchGptResponse() {
