@@ -17,7 +17,7 @@ p{
 }
 main {
   display: flex ;
-  justify-content: space-between;
+
 }
 
 #pagina-principal{
@@ -51,6 +51,7 @@ button:focus {
   width: auto;
   height: auto;
   padding: 10px;
+  margin-left: 10px;
 }
 #seleccionar-parcial{
   display: flex;
@@ -132,8 +133,8 @@ padding-top: 50px;
 }
 
 .main-content {
-  width: 85%;
-  padding: 10px;
+  width: 100%;
+  padding-top: 10px;
   margin-bottom: 20px;
   padding-bottom: 70px; /* Esto crea un espacio en la parte inferior, que es donde la barra de entrada se superpondría */
   box-sizing: border-box;
@@ -187,10 +188,12 @@ color: white;
 }
 /* Estilo para fijar la barra de entrada en la parte inferior */
 .footer-input {
+  display: flex;
+  align-items: center; /* Esto centrará verticalmente los elementos hijos */
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 83.7%;
+  width: 82%;
   background-color: white; /* Asegúrate de que esta coincida con el color de fondo de tu diseño */
   box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1); /* Agrega una pequeña sombra para dar profundidad */
   z-index: 1000; /* Esto garantiza que la barra se muestre por encima de otros elementos */
@@ -223,7 +226,12 @@ color: white;
 }
 
 .actividad {
-  width: 80%; /* o la medida que prefieras */
+  width: 100%; /* o la medida que prefieras */
+  display: flex;
+  flex-direction: row;
+    width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 /*-----------------Diseño mobile----------------------------*/
