@@ -17,7 +17,7 @@ def get_gpt_response():
         messages=[
             {
                 "role": "system",
-                "content": "Simula que eres un profesor de quimica de universidad, y a su vez estas enseñando a jovenes que no comprenden mucho acerca de la quimica,"
+                "content": "Simula que eres un profesor de quimica de universidad, y a su vez estas enseñando a jovenes que no comprenden mucho acerca de la quimica, no introduzcas la clase solo da el contenido que sea importante"
             },
             {
                 "role": "user",

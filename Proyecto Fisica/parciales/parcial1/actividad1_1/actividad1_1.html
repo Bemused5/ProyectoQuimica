@@ -93,10 +93,13 @@
                     <p><span id="resultado3">S</span></p>
                 </section>
               </section>
+              <section id="answer-area" style="display: flex; flex-direction: column;">
+
+              </section>
   
             <div class="footer-input">
               <textarea class="expandable-textarea" placeholder="Escribe tu pregunta aquí..."></textarea>
-              <button onclick="sendUserQuery()" title="Enviar" class="sendbutton"><i class="fas fa-paper-plane"></i></button>
+              <button onclick="sendUserQuery()" title="Enviar" class="sendbutton" disabled id="send"><i class="fas fa-paper-plane"></i></button>
             </div>
           
             </section>
@@ -201,8 +204,11 @@
           })
           .then(response => response.json())
           .then(data => {
-              // Actualiza el contenido del span con la respuesta de la API
-              document.getElementById("resultado3").textContent = data.message;
+            document.getElementById("resultado3").textContent = data.message;
+
+              // Activar el botón de envío aquí
+              document.querySelector('.sendbutton').removeAttribute("disabled");
+
 
               // Desactiva el botón
               document.getElementById("boton-continuar2").setAttribute("disabled", "disabled");
@@ -217,6 +223,49 @@
 
           });
         }
+
+        function sendUserQuery() {
+        // Tomar el contenido ingresado por el usuario
+        let userQuery = document.querySelector('.expandable-textarea').value.trim();
+
+        // No hacer nada si la entrada del usuario está vacía
+        if (!userQuery) return;
+
+        // Crear un div para la pregunta del usuario
+        let userDiv = document.createElement('div');
+        userDiv.className = "user-question";
+        userDiv.textContent = userQuery;
+
+        // Agregar la pregunta del usuario al área de chat
+        document.getElementById("answer-area").appendChild(userDiv);
+
+        // Llamar a la API con la pregunta del usuario
+        fetch('http://localhost:5000/get_gpt_response', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ message: userQuery }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Crear un div para la respuesta del bot
+            let botResponse = document.createElement('div');
+            botResponse.className = "bot-response";
+            botResponse.textContent = data.message;
+
+            // Agregar la respuesta del bot al área de chat
+            document.getElementById("answer-area").appendChild(botResponse);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+
+        // Limpiar el área de entrada del usuario
+        document.querySelector('.expandable-textarea').value = "";
+    } 
+
+
       </script>
     </body>
 </html>
