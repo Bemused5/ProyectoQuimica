@@ -231,12 +231,13 @@ color: white;
 
 
 .user-question {
-  background-color: #e6e6e6;
+  background-color: #00DFA2;
   padding: 8px;
-  margin: 5px 0;
-  border-radius: 5px;
+  margin: 5px 0px;
+  border-radius: 50px;
   align-self: flex-end;
   max-width: 80%;
+  color: white;
 }
 
 .bot-response {
@@ -246,6 +247,9 @@ color: white;
   border-radius: 5px;
   align-self: flex-start;
   max-width: 80%;
+}
+.user{
+  text-align: center;
 }
 
 
