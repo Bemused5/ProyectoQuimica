@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>ElementAI Unidad 1 Parcial 1</title>
+        <link rel="icon" type="image/jpg" href="../assets/logoupslp.jpg">
+        <script defer src="../navigation_bar.js"></script>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@500;700&display=swap" rel="stylesheet">
+        <script
+        src="https://kit.fontawesome.com/7e5b2d153f.js"
+        crossorigin="anonymous"
+        ></script>
+       
+      
+    </head>
+    <body>
+      <div></div>
+        <header class="header">
+            <nav class="nav">
+              <a href="/Proyecto Fisica/elemental.html" class="logo nav-link">ElementAI</a>
+              <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fas fa-bars"></i>
+              </button>
+              <ul class="nav-menu">
+                <li class="nav-menu-item">
+                    <a href="/Proyecto Fisica/parciales/parcial1/inicio_Parcial1.html" class="nav-menu-link nav-link">Primer Parcial</a>
+                  </li>
+                  <li class="nav-menu-item">
+                    <a href="/Proyecto Fisica/parciales/parcial2/inicio_Parcial2.html" class="nav-menu-link nav-link">Segundo Parcial</a>
+                  </li>
+                  <li class="nav-menu-item">
+                    <a href="/Proyecto Fisica/parciales/parcial3/inicio_Parcial3.html" class="nav-menu-link nav-link">Tercer Parcial</a>
+                  </li>
+    
+              </ul>
+            </nav>
+        </header>
+        <div class="main-container">
+          <aside class="left-menu">
+            <ul>
+                <li><a href="./unidad1.html">Unidad 1</a></li>
+                <li><a href="./unidad2.html">Unidad 2</a></li>
+                <li><a href="#unidad3">Unidad 3</a></li>
+                <li><a href="./unidad4.html">Unidad 4</a></li>
+                <li><a href="./unidad5.html">Unidad 5</a></li>
+                <!-- Agrega más unidades según lo necesites -->
+            </ul>
+          </aside>
+          <main class="actividad">
+          
+            <!-- Contenido principal -->
+            <section class="main-content">
+              <h1 class="text-centered">Unidad 1 Primer Parcial</h1>
+              <br><br>
+              
+              <section class="answer-area">
+                  <section class="answer">
+                      <button id="boton-verificar" onclick="fetchGptResponse()">Iniciar unidad 1</button>
+                  </section>
+              </section>
+              <br><br><br>
+              <section id="chat-area" style="display: flex; flex-direction: column;">
+                <img id="robot-gif" src="/Proyecto Fisica/assets/robot.gif" alt="Robot esperando">
+                <section id="resultado-1-1-2">
+                    <p><span id="resultado">S</span></p>
+                </section>
+              </section>
+              <br><br><br>
+              <section class="answer-area">
+                <section class="answer">
+                    <button id="boton-continuar" style="display: none;" onclick="continueClass()">Continuar con la clase</button>
+                </section>
+              </section>
+              <br><br><br>
+              <section id="chat-area" style="display: flex; flex-direction: column;">
+                <section id="resultado-1-1-2">
+                    <p><span id="resultado2">S</span></p>
+                </section>
+              </section>
+              <br><br><br>
+              <section class="answer-area">
+                <section class="answer">
+                    <button id="boton-continuar2" style="display: none;" onclick="finishClass()">Continuar con la clase</button>
+                </section>
+              </section>
+              <br><br><br>
+              <section id="chat-area" style="display: flex; flex-direction: column;">
+                <section id="resultado-1-1-2">
+                    <p><span id="resultado3">S</span></p>
+                </section>
+              </section>
+              <section id="answer-area" style="display: flex; flex-direction: column;">
+               
+  
+            <div class="footer-input">
+              <textarea class="expandable-textarea" placeholder="Escribe tu pregunta aquí..."></textarea>
+              <button onclick="sendUserQuery()" title="Enviar" class="sendbutton" disabled id="send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+          
+            </section>
+            
+          </main>
+        </div>
+        
+        
+        <script>
+          function fetchGptResponse() {
+          // Ocultar el GIF y mostrar el span
+          document.getElementById("robot-gif").style.display = "none";
+          document.getElementById("resultado").style.display = "inline-block";
+          // Establece el mensaje inicial cuando se hace clic en el botón
+          document.getElementById("resultado").textContent = "Esperando respuesta...";
+
+          let message = "Di que son y explica las particulas fundamentales, asi como tambien hbalas de las particulas subatomicas de un atomo";
+
+          fetch('http://localhost:5000/get_gpt_response', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ message: message }),
+          })
+          .then(response => response.json())
+          .then(data => {
+              // Actualiza el contenido del span con la respuesta de la API
+              document.getElementById("resultado").textContent = data.message;
+
+              // Mostrar el botón de "Continuar con la clase" si la respuesta es exitosa
+              document.getElementById("boton-continuar").style.display = "inline-block";
+
+              // Desactiva el botón
+              document.getElementById("boton-verificar").setAttribute("disabled", "disabled");
+
+              // Cambia el estilo del botón para que se vea desactivado
+              document.getElementById("boton-verificar").style.opacity = 0.5;
+          })
+          .catch((error) => {
+              // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
+              document.getElementById("resultado").textContent = "Hubo un error al obtener la respuesta.";
+              console.error('Error:', error);
+
+              // Mantener el botón de "Continuar con la clase" oculto si hay un error
+              document.getElementById("boton-continuar").style.display = "none";
+          });
+        }
+        function continueClass() {
+          // Ocultar el GIF y mostrar el span
+          document.getElementById("resultado2").style.display = "inline-block";
+          // Establece el mensaje inicial cuando se hace clic en el botón
+          document.getElementById("resultado2").textContent = "Esperando respuesta...";
+
+          let message = "Explica la evolucion que ha tenido el modelo atomico, y sus nuevos descubrimentos que se han tenido en cada modelo,y explica que son los numeros cuanticos y para que sirven";
+
+          fetch('http://localhost:5000/get_gpt_response', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ message: message }),
+          })
+          .then(response => response.json())
+          .then(data => {
+              // Actualiza el contenido del span con la respuesta de la API
+              document.getElementById("resultado2").textContent = data.message;
+
+              // Mostrar el botón de "Continuar con la clase" si la respuesta es exitosa
+              document.getElementById("boton-continuar2").style.display = "inline-block";
+
+              // Desactiva el botón
+              document.getElementById("boton-continuar").setAttribute("disabled", "disabled");
+
+              // Opcional: Cambia el estilo del botón para que se vea desactivado
+              document.getElementById("boton-continuar").style.opacity = 0.5;
+          })
+          .catch((error) => {
+              // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
+              document.getElementById("resultado2").textContent = "Hubo un error al obtener la respuesta.";
+              console.error('Error:', error);
+
+              // Mantener el botón de "Continuar con la clase" oculto si hay un error
+              document.getElementById("boton-continuar2").style.display = "none";
+          });
+        }
+
+        function finishClass() {
+          // Ocultar el GIF y mostrar el span
+          document.getElementById("resultado3").style.display = "inline-block";
+          // Establece el mensaje inicial cuando se hace clic en el botón
+          document.getElementById("resultado3").textContent = "Esperando respuesta...";
+
+          let message = "Explica la teoria cuantica, y tambien el paramagnetismo y diamagnetismo en los elementos";
+
+          fetch('http://localhost:5000/get_gpt_response', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ message: message }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById("resultado3").textContent = data.message;
+
+              // Activar el botón de envío aquí
+              document.querySelector('.sendbutton').removeAttribute("disabled");
+
+
+              // Desactiva el botón
+              document.getElementById("boton-continuar2").setAttribute("disabled", "disabled");
+
+              // Opcional: Cambia el estilo del botón para que se vea desactivado
+              document.getElementById("boton-continuar2").style.opacity = 0.5;
+          })
+          .catch((error) => {
+              // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
+              document.getElementById("resultado3").textContent = "Hubo un error al obtener la respuesta.";
+              console.error('Error:', error);
+
+          });
+        }
+
+        function sendUserQuery() {
+            // Tomar el contenido ingresado por el usuario
+            let userQuery = document.querySelector('.expandable-textarea').value.trim();
+
+            // No hacer nada si la entrada del usuario está vacía
+            if (!userQuery) return;
+
+            // Crear un div para la pregunta del usuario
+            let userDiv = document.createElement('div');
+            userDiv.className = "user-question";
+            userDiv.textContent = userQuery;
+
+            // Agregar la pregunta del usuario al área de chat
+            document.getElementById("answer-area").appendChild(userDiv);
+
+            // Crear un div para el mensaje "Esperando respuesta..."
+            let waitingDiv = document.createElement('div');
+            waitingDiv.className = "waiting-response";
+            waitingDiv.textContent = "Esperando respuesta...";
+            document.getElementById("answer-area").appendChild(waitingDiv);
+
+            // Llamar a la API con la pregunta del usuario
+            fetch('http://localhost:5000/get_gpt_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userQuery }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Remover el div "Esperando respuesta..."
+                waitingDiv.remove();
+
+                // Crear un div para la respuesta del bot
+                let botResponse = document.createElement('div');
+                botResponse.className = "bot-response";
+                botResponse.textContent = data.message;
+
+                // Agregar la respuesta del bot al área de chat
+                document.getElementById("answer-area").appendChild(botResponse);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                
+                // Remover el div "Esperando respuesta..."
+                waitingDiv.remove();
+                
+                // Mostrar un mensaje de error en lugar del div "Esperando respuesta..."
+                let errorDiv = document.createElement('div');
+                errorDiv.className = "error-response";
+                errorDiv.textContent = "Hubo un error al obtener la respuesta.";
+                document.getElementById("answer-area").appendChild(errorDiv);
+            });
+
+            // Limpiar el área de entrada del usuario
+            document.querySelector('.expandable-textarea').value = "";
+        }
+
+
+
+      </script>
+    </body>
+</html>

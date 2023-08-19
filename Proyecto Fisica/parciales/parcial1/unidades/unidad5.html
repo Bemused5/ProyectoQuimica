@@ -43,11 +43,11 @@
         <div class="main-container">
           <aside class="left-menu">
             <ul>
-                <li><a href="#unidad1">Unidad 1</a></li>
+                <li><a href="./unidad1.html">Unidad 1</a></li>
                 <li><a href="./unidad2.html">Unidad 2</a></li>
                 <li><a href="./unidad3.html">Unidad 3</a></li>
                 <li><a href="./unidad4.html">Unidad 4</a></li>
-                <li><a href="./unidad5.html">Unidad 5</a></li>
+                <li><a href="#unidad5">Unidad 5</a></li>
                 <!-- Agrega más unidades según lo necesites -->
             </ul>
           </aside>
@@ -56,7 +56,6 @@
             <!-- Contenido principal -->
             <section class="main-content">
               <h1 class="text-centered">Unidad 1 Primer Parcial</h1>
-              <h2 class="text-centered">Introducción</h1>
               <br><br>
               
               <section class="answer-area">
@@ -84,17 +83,7 @@
                 </section>
               </section>
               <br><br><br>
-              <section class="answer-area">
-                <section class="answer">
-                    <button id="boton-continuar2" style="display: none;" onclick="finishClass()">Continuar con la clase</button>
-                </section>
-              </section>
-              <br><br><br>
-              <section id="chat-area" style="display: flex; flex-direction: column;">
-                <section id="resultado-1-1-2">
-                    <p><span id="resultado3">S</span></p>
-                </section>
-              </section>
+              
               <section id="answer-area" style="display: flex; flex-direction: column;">
                
   
@@ -117,7 +106,7 @@
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado").textContent = "Esperando respuesta...";
 
-          let message = "Da una definicion de la quimica y una breve explicacion de las divisiones que hay en la quimica";
+          let message = "Explica conceptos de la estructura molecular";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',
@@ -155,7 +144,7 @@
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado2").textContent = "Esperando respuesta...";
 
-          let message = "Da la relacion de la quimica on otras ciencias y tambien la importancia y campo de accion de la quimica";
+          let message = "Explica los tipos de enlaces que existen en la moleculas";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',
@@ -169,8 +158,9 @@
               // Actualiza el contenido del span con la respuesta de la API
               document.getElementById("resultado2").textContent = data.message;
 
-              // Mostrar el botón de "Continuar con la clase" si la respuesta es exitosa
-              document.getElementById("boton-continuar2").style.display = "inline-block";
+
+              // Activar el botón de envío aquí
+              document.querySelector('.sendbutton').removeAttribute("disabled");
 
               // Desactiva el botón
               document.getElementById("boton-continuar").setAttribute("disabled", "disabled");
@@ -194,7 +184,7 @@
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado3").textContent = "Esperando respuesta...";
 
-          let message = "Da los distintos sistemas de unidades que pueden ser usados en la quimica, asi como de que tipo son";
+          let message = "Explica la ingenieria de los materiales y el como el uso de procesos qui8micos ayudan a que ciertos materiales mediante diversos procesos sean mas resistentes";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',
@@ -226,45 +216,64 @@
         }
 
         function sendUserQuery() {
-        // Tomar el contenido ingresado por el usuario
-        let userQuery = document.querySelector('.expandable-textarea').value.trim();
+            // Tomar el contenido ingresado por el usuario
+            let userQuery = document.querySelector('.expandable-textarea').value.trim();
 
-        // No hacer nada si la entrada del usuario está vacía
-        if (!userQuery) return;
+            // No hacer nada si la entrada del usuario está vacía
+            if (!userQuery) return;
 
-        // Crear un div para la pregunta del usuario
-        let userDiv = document.createElement('div');
-        userDiv.className = "user-question";
-        userDiv.textContent = userQuery;
+            // Crear un div para la pregunta del usuario
+            let userDiv = document.createElement('div');
+            userDiv.className = "user-question";
+            userDiv.textContent = userQuery;
 
-        // Agregar la pregunta del usuario al área de chat
-        document.getElementById("answer-area").appendChild(userDiv);
+            // Agregar la pregunta del usuario al área de chat
+            document.getElementById("answer-area").appendChild(userDiv);
 
-        // Llamar a la API con la pregunta del usuario
-        fetch('http://localhost:5000/get_gpt_response', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ message: userQuery }),
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Crear un div para la respuesta del bot
-            let botResponse = document.createElement('div');
-            botResponse.className = "bot-response";
-            botResponse.textContent = data.message;
+            // Crear un div para el mensaje "Esperando respuesta..."
+            let waitingDiv = document.createElement('div');
+            waitingDiv.className = "waiting-response";
+            waitingDiv.textContent = "Esperando respuesta...";
+            document.getElementById("answer-area").appendChild(waitingDiv);
 
-            // Agregar la respuesta del bot al área de chat
-            document.getElementById("answer-area").appendChild(botResponse);
-        })
-        .catch((error) => {
-            console.error('Error:', error);
-        });
+            // Llamar a la API con la pregunta del usuario
+            fetch('http://localhost:5000/get_gpt_response', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ message: userQuery }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Remover el div "Esperando respuesta..."
+                waitingDiv.remove();
 
-        // Limpiar el área de entrada del usuario
-        document.querySelector('.expandable-textarea').value = "";
-    } 
+                // Crear un div para la respuesta del bot
+                let botResponse = document.createElement('div');
+                botResponse.className = "bot-response";
+                botResponse.textContent = data.message;
+
+                // Agregar la respuesta del bot al área de chat
+                document.getElementById("answer-area").appendChild(botResponse);
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                
+                // Remover el div "Esperando respuesta..."
+                waitingDiv.remove();
+                
+                // Mostrar un mensaje de error en lugar del div "Esperando respuesta..."
+                let errorDiv = document.createElement('div');
+                errorDiv.className = "error-response";
+                errorDiv.textContent = "Hubo un error al obtener la respuesta.";
+                document.getElementById("answer-area").appendChild(errorDiv);
+            });
+
+            // Limpiar el área de entrada del usuario
+            document.querySelector('.expandable-textarea').value = "";
+        }
+
 
 
       </script>
