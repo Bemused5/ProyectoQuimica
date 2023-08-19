@@ -215,42 +215,37 @@ color: white;
   width: 95%; /* Ajusta según lo necesites, el 90% es solo un ejemplo */
   resize: none; /* Esto evita que los usuarios cambien manualmente el tamaño del área de texto */
 }
+
+
+
 .user-question {
   display: inline-block;
   background-color: #00DFA2;
-  padding: 10px 15px;
-  margin: 10px 0;
-  border-radius: 5px;
-  width: auto;
-  border: none;
-  cursor: default;
-  text-align: right;
-  white-space: pre-wrap;
-}
-
-
-
-.user-question {
-  background-color: #00DFA2;
-  padding: 8px;
+  padding: 15px 40px;
   margin: 5px 0px;
-  border-radius: 50px;
+  width: auto;
+  border-radius: 20px;
   align-self: flex-end;
   max-width: 80%;
   color: white;
+  text-align: center;
+  margin: 10px 0;
+
+  white-space: 
 }
 
 .bot-response {
-  background-color: #d1e7dd;
-  padding: 8px;
+  background-color: #0079FF;
+  color: white;
+  padding: 15px 20px;
   margin: 5px 0;
-  border-radius: 5px;
+  border-radius: 20px;
   align-self: flex-start;
   max-width: 80%;
+  text-align: justify;
+  width: auto;
 }
-.user{
-  text-align: center;
-}
+
 
 
 
