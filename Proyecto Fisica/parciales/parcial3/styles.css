@@ -1,274 +1,508 @@
 body{
-    background-color: white;
+  background-color: white;
 }
 h1{
-    color: black;
-    font-size: 30px;
-    font-family: 'Golos Text', sans-serif;
+  color: black;
+  font-size: 30px;
+  font-family: 'Golos Text', sans-serif;
 }
 h2{
-    color: black;
-    font-size: 16px;
-    font-family: 'Golos Text', sans-serif;
+  color: black;
+  font-size: 16px;
+  font-family: 'Golos Text', sans-serif;
 }
 p{
-    color: black;
-    font-family: 'Golos Text', sans-serif;
+  color: black;
+  font-family: 'Golos Text', sans-serif;
+}
+main {
+  display: flex ;
+
 }
 
 #pagina-principal{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
 }
 button{
-    background-color: #FCFFE7;
-    border: #FCFFE7 2px solid;
-    color: black;
-    width: 100px;
-    height: 30px;
-    border-radius: 20px
+  font-family: 'Golos Text', sans-serif;
+  font-size: 16px;
+  background-color: #00DFA2;
+  border: #FCFFE7 2px solid;
+  color: white;
+  font-style: bold;
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[disabled]:hover{
+  background-color: #00DFA2;  /* Un color más oscuro para el efecto hover */
+  opacity: 0.5;
+}
+button:hover{
+  background-color: #02b57f;  /* Un color más oscuro para el efecto hover */
+}
+
+button:focus {
+  outline: none;  /* Elimina el borde azul que aparece al hacer clic en el botón */
+}
+.sendbutton{
+  width: auto;
+  height: auto;
+  padding: 10px;
+  margin-left: 10px;
+}
+#send{
+  opacity: 1;
+}
+#send[disabled]{
+  opacity: 0.5;
 }
 #seleccionar-parcial{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
 }
 #parciales{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 .cajas-parciales{
-    display: flex;
-    width: 180px;
-    height: 130px;
-    border: 2px solid white;
-    text-align: center;
-    align-items: center;
-    border-radius: 10px;
-    padding-left: 15px;
+  display: flex;
+  width: 180px;
+  height: 130px;
+  border: 2px solid white;
+  text-align: center;
+  align-items: center;
+  border-radius: 10px;
+  padding-left: 15px;
 }
 img{
-    width: 100px;
+  width: 100px;
 }
 #logo{
-    width: 175px;
+  width: 175px;
 }
+.text-activities{
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 50px;
+}
+.answer-area{
+  display: flex;
+  justify-self: flex-end;
+  gap: 0.5rem;
+  align-items: right;
+  text-align: right;
+}
+.answer{
+  padding-left: 0px;
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+.left-menu{
+  width: 15%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.left-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.left-menu ul li {
+  margin-bottom: 10px;
+}
+
+.left-menu ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.left-menu ul li a:hover {
+  background-color: #f4f4f4;
+}
+
+.text-centered {
+  text-align: center;
+}
+
+.main-content {
+  width: 100%;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 70px; /* Esto crea un espacio en la parte inferior, que es donde la barra de entrada se superpondría */
+  box-sizing: border-box;
+  overflow-y: auto; /* Esto permite que el contenido se desplace si excede el alto de la ventana */
+}
+.text-space{
+width: 75%;
+}
+label{
+color: white;
+}
+
+
+
+#resultado{
+  display: none;
+  background-color: #0079FF;
+  color: white;
+  padding: 25px 25px;
+  height: auto;
+  min-height: 50px;
+  align-items:flex-start;
+  border-radius: 20px;
+  white-space: pre-wrap;
+  text-align: justify;
+}
+#resultado2{
+  display: none;
+  background-color: #0079FF;
+  color: white;
+  padding: 25px 25px;
+  height: auto;
+  min-height: 50px;
+  align-items:flex-start;
+  border-radius: 20px;
+  white-space: pre-wrap;
+  text-align: justify;
+}
+
+#resultado3{
+  display: none;
+  background-color: #0079FF;
+  color: white;
+  padding: 25px 25px;
+  height: auto;
+  min-height: 50px;
+  align-items:flex-start;
+  border-radius: 20px;
+  white-space: pre-wrap;
+  text-align: justify;
+}
+/* Estilo para fijar la barra de entrada en la parte inferior */
+.footer-input {
+  display: flex;
+  align-items: center; /* Esto centrará verticalmente los elementos hijos */
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 82.3%;
+  background-color: white; /* Asegúrate de que esta coincida con el color de fondo de tu diseño */
+  box-shadow: 0 -1px 6px rgba(0, 0, 0, 0.1); /* Agrega una pequeña sombra para dar profundidad */
+  z-index: 1000; /* Esto garantiza que la barra se muestre por encima de otros elementos */
+  padding: 10px; /* Un poco de espacio alrededor de la barra */
+  border-top: 1px solid #e0e0e0; /* Agrega un borde sutil en la parte superior para diferenciarlo del contenido */
+}
+
+/* Estilo para el área de texto que se expande */
+.expandable-textarea {
+  max-height: calc(100% / 4); /* Ajusta para que no supere 1/4 de la altura de la vista */
+  overflow-y: auto; /* Esto permitirá que se desplace si el contenido excede el máximo */
+  width: 95%; /* Ajusta según lo necesites, el 90% es solo un ejemplo */
+  resize: none; /* Esto evita que los usuarios cambien manualmente el tamaño del área de texto */
+}
+
+
+
+.user-question {
+  display: inline-block;
+  background-color: #00DFA2;
+  padding: 15px 40px;
+  margin: 60px 0px;
+  width: auto;
+  border-radius: 20px;
+  align-self: flex-end;
+  max-width: 80%;
+  color: white;
+  text-align: center;
+  font-family: 'Golos Text', sans-serif;
+}
+
+.bot-response {
+  background-color: #0079FF;
+  color: white;
+  padding: 15px 20px;
+  margin: 5px 0;
+  border-radius: 20px;
+  align-self: flex-start;
+  max-width: 80%;
+  text-align: justify;
+  width: auto;
+  font-family: 'Golos Text', sans-serif;
+  gap: 0.2rem;
+}
+
+
+
+
+#userInput {
+  flex: 1; 
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-menu {
+  width: 20%; /* o la medida que prefieras */
+}
+
+.actividad {
+  width: 100%; /* o la medida que prefieras */
+  display: flex;
+  flex-direction: row;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
 /*-----------------Diseño mobile----------------------------*/
 * {
-    margin: 0;
-    box-sizing: border-box;
-    }
-    
-    body {
-    font-family: sans-serif;
-    padding: 90px 20px 0;
-    }
-    
-    .header {
-    background-color: white;
-    height: 80px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-bottom: groove;
-    border-color: whitesmoke;
-    }
-    
-    .nav {
-    display: flex;
-    justify-content: space-between;
-    
-    
-    margin: 0 auto;
-    }
-    
-    .nav-link {
+  margin: 0;
+  box-sizing: border-box;
+  }
+  
+  body {
+  font-family: sans-serif;
+  padding: 90px 20px 0;
+  }
+  
+  .header {
+  background-color: white;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  border-bottom: groove;
+  border-color: whitesmoke;
+  }
+  
+  .nav {
+  display: flex;
+  justify-content: space-between;
+  
+  
+  margin: 0 auto;
+  }
+  
+  .nav-link {
+  color: black;
+  text-decoration: none;
+  }
+  
+  .logo {
+  font-size: 30px;
+  font-weight: bold;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 80px;
+  line-height: 80px;
+  }
+  
+  .nav-menu {
+  display: flex;
+  
+  list-style: none;
+  }
+  
+  .nav-menu-item {
+  font-size: 18px;
+  margin: 0 10px;
+  line-height: 80px;
+  text-transform: uppercase;
+  width: max-content;
+  }
+  
+  .nav-menu-link {
+  padding: 8px 12px;
+  border-radius: 3px;
+  }
+  
+  .nav-menu-link:hover,
+  .nav-menu-link_active {
+  background-color: #034574;
+  transition: 0.5s;
+  }
+  
+  /* TOGGLE */
+.nav-toggle {
+  color: black;
+  background: none;
+  border: none;
+  font-size: 30px;
+  padding: 0 20px;
+  line-height: 60px;
+  cursor: pointer;
+  
+  display: none;
+  }
+  
+    h1{
     color: black;
-    text-decoration: none;
-    }
-    
-    .logo {
     font-size: 30px;
-    font-weight: bold;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    padding-left: 80px;
-    line-height: 80px;
+    font-family: 'Golos Text', sans-serif;
     }
-    
-    .nav-menu {
-    display: flex;
-    
-    list-style: none;
+    h2{
+        color: black;
+        font-size: 16px;
+        font-family: 'Golos Text', sans-serif;
     }
-    
-    .nav-menu-item {
-    font-size: 18px;
-    margin: 0 10px;
-    line-height: 80px;
-    text-transform: uppercase;
-    width: max-content;
+    p{
+        color: black;
+        font-family: 'Golos Text', sans-serif;
     }
-    
-    .nav-menu-link {
-    padding: 8px 12px;
-    border-radius: 3px;
-    }
-    
-    .nav-menu-link:hover,
-    .nav-menu-link_active {
-    background-color: #034574;
-    transition: 0.5s;
-    }
-    
-    /* TOGGLE */
-  .nav-toggle {
-    color: black;
-    background: none;
-    border: none;
-    font-size: 30px;
-    padding: 0 20px;
-    line-height: 60px;
-    cursor: pointer;
-    
-    display: none;
-    }
-    
-      h1{
-      color: black;
-      font-size: 30px;
-      font-family: 'Golos Text', sans-serif;
-      }
-      h2{
-          color: black;
-          font-size: 16px;
-          font-family: 'Golos Text', sans-serif;
-      }
-      p{
-          color: black;
-          font-family: 'Golos Text', sans-serif;
-      }
-      #pagina-principal{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          padding-top: 200px;
-      }
-      #boton-inicia{
-          background-color: #FCFFE7;
-          border: #FCFFE7 2px solid;
-          color: black;
-          width: 150px;
-          height: 50px;
-          border-radius: 20px
-      }
-      #seleccionar-parcial{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          padding-top: 100px;
-      }
-      #parciales{
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: center;
-          gap: 2rem;
-      }
-      #seleccionar-parcial{
-        padding-bottom: 50px;
-        text-align: center;
-      }
-      .cajas-parciales{
-          display: flex;
-          width: 180px;
-          height: 130px;
-          border: 2px solid gray;
-          text-align: center;
-          align-items: center;
-          border-radius: 10px;
-          padding-left: 15px;
-      }
-      img{
-          width: 100px;
-      }
-      #logo{
-          width: 175px;
-      }
-    /* MOBILE */
-    @media (max-width: 768px) {
-      body {
-        padding-top: 70px;
-        
-      }
-    
-      .header {
-        height: 60px;
-      }
-    
-      .logo {
-        font-size: 25px;
-        padding: 0 20px;
-        line-height: 60px;
-      }
-    
-      .nav-menu {
-        flex-direction: column;
-        align-items: center;
-        margin: 0;
-        background-color: white;
-        position: fixed;
-        top: 60px;
-        width: 100%;
-        padding: 20px 0;
-    
-        height: calc(100% - 60px);
-        overflow-y: auto;
-    
-        left: 100%;
-        transition: left 0.3s;
-      }
-    
-      .nav-menu-item {
-        line-height: 70px;
-      }
-    
-      .nav-menu-link:hover,
-      .nav-menu-link_active {
-        background: none;
-        color: #83c5f7;
-      }
-    
-      .nav-toggle {
-        display: block;
-      }
-    
-      .nav-menu_visible {
-        left: 0;
-      }
-    
-      .nav-toggle:focus:not(:focus-visible) {
-        outline: none;
-      }
-      #seleccionar-parcial{
-        padding-top: 25px;
-        padding-bottom: 30px;
-        text-align: center;
-      }
-      #parciales{
+    #pagina-principal{
         display: flex;
         flex-direction: column;
-        padding-bottom: 50px;
-      }
+        justify-content: center;
+        align-items: center;
+        padding-top: 200px;
     }
+    #boton-inicia{
+        background-color: #FCFFE7;
+        border: #FCFFE7 2px solid;
+        color: black;
+        width: 150px;
+        height: 50px;
+        border-radius: 20px
+    }
+    #seleccionar-parcial{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 100px;
+    }
+    #parciales{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+    }
+    #seleccionar-parcial{
+      padding-bottom: 50px;
+      text-align: center;
+    }
+    .cajas-parciales{
+        display: flex;
+        width: 180px;
+        height: 130px;
+        border: 2px solid gray;
+        text-align: center;
+        align-items: center;
+        border-radius: 10px;
+        padding-left: 15px;
+    }
+    img{
+        width: 100px;
+    }
+    #logo{
+        width: 175px;
+    }
+  /* MOBILE */
+  @media (max-width: 900px) {
+    body {
+      padding-top: 70px;
+      
+    }
+  
+    .header {
+      height: 60px;
+    }
+  
+    .logo {
+      font-size: 25px;
+      padding: 0 20px;
+      line-height: 60px;
+    }
+  
+    .nav-menu {
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      background-color: white;
+      position: fixed;
+      top: 60px;
+      width: 100%;
+      padding: 20px 0;
+  
+      height: calc(100% - 60px);
+      overflow-y: auto;
+  
+      left: 100%;
+      transition: left 0.3s;
+    }
+  
+    .nav-menu-item {
+      line-height: 70px;
+    }
+  
+    .nav-menu-link:hover,
+    .nav-menu-link_active {
+      background: none;
+      color: #83c5f7;
+    }
+  
+    .nav-toggle {
+      display: block;
+    }
+  
+    .nav-menu_visible {
+      left: 0;
+    }
+  
+    .nav-toggle:focus:not(:focus-visible) {
+      outline: none;
+    }
+    #seleccionar-parcial{
+      padding-top: 25px;
+      padding-bottom: 30px;
+      text-align: center;
+    }
+    #parciales{
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 50px;
+    }
+    .main-container {
+      flex-direction: column;
+    }
+
+    .left-menu, .actividad {
+        width: 100%;
+    }
+    .footer-input {
+      width: 100%;
+    }
+    .left-menu ul {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; /* esto distribuirá el espacio entre los ítems */
+      list-style-type: none; /* esto eliminará los puntos del listado */
+      padding: 0; /* esto eliminará el padding predeterminado del listado */
+  }
+  }

@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ElementAI Unidad 1 Parcial 1</title>
+        <title>ElementAI Unidad 6 Parcial 2</title>
         <link rel="icon" type="image/jpg" href="../assets/logoupslp.jpg">
         <script defer src="../navigation_bar.js"></script>
         <link rel="stylesheet" href="../styles.css">
@@ -43,10 +43,9 @@
         <div class="main-container">
           <aside class="left-menu">
             <ul>
-                <li><a href="#unidad1">Unidad 1</a></li>
-                <li><a href="./unidad2.html">Unidad 2</a></li>
-                <li><a href="./unidad3.html">Unidad 3</a></li>
-                <li><a href="./unidad4.html">Unidad 4</a></li>
+                <li><a href="#unidad6">Unidad 6</a></li>
+                <li><a href="./unidad7.html">Unidad 7</a></li>
+                
                 <!-- Agrega más unidades según lo necesites -->
             </ul>
           </aside>
@@ -54,7 +53,8 @@
           
             <!-- Contenido principal -->
             <section class="main-content">
-              <h1 class="text-centered">Unidad 1 Primer Parcial</h1>
+              <h1 class="text-centered">Unidad 6 Segundo Parcial</h1>
+              <h2 class="text-centered">Nomenclatura inorganica</h2>
               <br><br>
               
               <section class="answer-area">
@@ -115,7 +115,7 @@
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado").textContent = "Esperando respuesta...";
 
-          let message = "Da una definicion de la quimica y una breve explicacion de las divisiones que hay en la quimica";
+          let message = "Di el concepto de nomenclatura inorgánica, y explica las siguientes funciones químicas inorganicas: óxidos basicos y óxidos ácidos";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',
@@ -153,7 +153,7 @@
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado2").textContent = "Esperando respuesta...";
 
-          let message = "Da la relacion de la quimica on otras ciencias y tambien la importancia y campo de accion de la quimica";
+          let message = "Explica las siguientes funciones químicas inorganicas: hidróxidos, oxisales neutras y oxisales ácidas";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',
@@ -192,7 +192,7 @@
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado3").textContent = "Esperando respuesta...";
 
-          let message = "Da los distintos sistemas de unidades que pueden ser usados en la quimica, asi como de que tipo son";
+          let message = "Explica las siguientes funciones químicas inorganicas: sales haloides, hidruros y peroxidos";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',

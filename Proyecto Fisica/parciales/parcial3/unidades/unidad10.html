@@ -43,10 +43,11 @@
         <div class="main-container">
           <aside class="left-menu">
             <ul>
-                <li><a href="#unidad1">Unidad 1</a></li>
-                <li><a href="./unidad2.html">Unidad 2</a></li>
-                <li><a href="./unidad3.html">Unidad 3</a></li>
-                <li><a href="./unidad4.html">Unidad 4</a></li>
+              <li><a href="./unidad8.html">Unidad 8</a></li>
+              <li><a href="./unidad9.html">Unidad 9</a></li>
+              <li><a href="#unidad10">Unidad 10</a></li>
+              <li><a href="./unidad11.html">Unidad 11</a></li>
+              <li><a href="./unidad12.html">Unidad 12</a></li>
                 <!-- Agrega más unidades según lo necesites -->
             </ul>
           </aside>
@@ -54,7 +55,8 @@
           
             <!-- Contenido principal -->
             <section class="main-content">
-              <h1 class="text-centered">Unidad 1 Primer Parcial</h1>
+              <h1 class="text-centered">Unidad 10 Tercer Parcial</h1>
+              <h2 class="text-centered">Medición de gases</h2>
               <br><br>
               
               <section class="answer-area">
@@ -115,7 +117,7 @@
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado").textContent = "Esperando respuesta...";
 
-          let message = "Da una definicion de la quimica y una breve explicacion de las divisiones que hay en la quimica";
+          let message = "Para la medicion de gases explica las unidades de presión, masa, volumen y temperatura, y tambien explica las condiciones normales en la medición de gases";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',

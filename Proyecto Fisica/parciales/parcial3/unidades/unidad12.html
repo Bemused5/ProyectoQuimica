@@ -43,11 +43,11 @@
         <div class="main-container">
           <aside class="left-menu">
             <ul>
-                <li><a href="#unidad8">Unidad 8</a></li>
+                <li><a href="./unidad8.html">Unidad 8</a></li>
                 <li><a href="./unidad9.html">Unidad 9</a></li>
                 <li><a href="./unidad10.html">Unidad 10</a></li>
                 <li><a href="./unidad11.html">Unidad 11</a></li>
-                <li><a href="./unidad12.html">Unidad 12</a></li>
+                <li><a href="#unidad12">Unidad 12</a></li>
                 <!-- Agrega más unidades según lo necesites -->
             </ul>
           </aside>
@@ -55,8 +55,8 @@
           
             <!-- Contenido principal -->
             <section class="main-content">
-              <h1 class="text-centered">Unidad 8 Tercer Parcial</h1>
-              <h2 class="text-centered">Estequiometría</h2>
+              <h1 class="text-centered">Unidad 12 Tercer Parcial</h1>
+              <h2 class="text-centered">Introducción a la termoquímica</h2>
               <br><br>
               
               <section class="answer-area">
@@ -117,7 +117,7 @@
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado").textContent = "Esperando respuesta...";
 
-          let message = "Di que son los pesos atómicos, pesos moleculares y moles. Tambien explica la composición porcentual de diferentes compuestos";
+          let message = "En la termoquímica explica que es la entalpia";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',
@@ -155,7 +155,7 @@
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado2").textContent = "Esperando respuesta...";
 
-          let message = "Explica la estequiometria de las reacciones químicas, da una explicacion de como se hace el calculo matematico de la estequiometria de una forma facil";
+          let message = "Explica el metodo directo que se una en la termoquímica y como hacerlo";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',
@@ -194,7 +194,7 @@
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado3").textContent = "Esperando respuesta...";
 
-          let message = "Explica la estequiometria de las reacciones quimicas y hacer los calculos de esta";
+          let message = "Explica el metodo indirecti o Ley de HEss en la termodinamica y como hacerlo";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',
