@@ -64,7 +64,7 @@ border-radius: 3px;
 
 .nav-menu-link:hover,
 .nav-menu-link_active {
-background-color: #034574;
+  background-color: #00DFA2;
 transition: 0.5s;
 }
 
@@ -149,6 +149,13 @@ img{
 }
 #logo{
     width: 300px;
+}
+#boton-inicia {
+  transition: opacity 0.3s; /* Esto asegura una transición suave de opacidad */
+}
+
+#boton-inicia:hover {
+  opacity: 0.6; /* Esto hará que el botón sea un 70% opaco (o más claro) cuando se pase el ratón por encima */
 }
   /* MOBILE */
   @media (max-width: 768px) {

@@ -197,6 +197,30 @@ color: white;
   white-space: pre-wrap;
   text-align: justify;
 }
+#resultado4{
+  display: none;
+  background-color: #0079FF;
+  color: white;
+  padding: 25px 25px;
+  height: auto;
+  min-height: 50px;
+  align-items:flex-start;
+  border-radius: 20px;
+  white-space: pre-wrap;
+  text-align: justify;
+}
+#resultado5{
+  display: none;
+  background-color: #0079FF;
+  color: white;
+  padding: 25px 25px;
+  height: auto;
+  min-height: 50px;
+  align-items:flex-start;
+  border-radius: 20px;
+  white-space: pre-wrap;
+  text-align: justify;
+}
 /* Estilo para fijar la barra de entrada en la parte inferior */
 .footer-input {
   display: flex;
@@ -342,7 +366,7 @@ color: white;
   
   .nav-menu-link:hover,
   .nav-menu-link_active {
-  background-color: #034574;
+  background-color: #00DFA2;
   transition: 0.5s;
   }
   
