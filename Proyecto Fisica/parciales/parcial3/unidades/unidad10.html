@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>ElementAI Unidad 1 Parcial 1</title>
+        <title>ElementAI Unidad 10 Parcial 3</title>
         <link rel="icon" type="image/jpg" href="../assets/logoupslp.jpg">
         <script defer src="../navigation_bar.js"></script>
         <link rel="stylesheet" href="../styles.css">
@@ -86,13 +86,35 @@
               <br><br><br>
               <section class="answer-area">
                 <section class="answer">
-                    <button id="boton-continuar2" style="display: none;" onclick="finishClass()">Continuar con la clase</button>
+                    <button id="boton-continuar2" style="display: none;" onclick="continueClass2()">Continuar con la clase</button>
                 </section>
               </section>
               <br><br><br>
               <section id="chat-area" style="display: flex; flex-direction: column;">
                 <section id="resultado-1-1-2">
                     <p><span id="resultado3">S</span></p>
+                </section>
+              </section>
+              <section class="answer-area">
+                <section class="answer">
+                    <button id="boton-continuar3" style="display: none;" onclick="continueClass3()">Continuar con la clase</button>
+                </section>
+              </section>
+              <br><br><br>
+              <section id="chat-area" style="display: flex; flex-direction: column;">
+                <section id="resultado-1-1-2">
+                    <p><span id="resultado4"></span></p>
+                </section>
+              </section>
+              <section class="answer-area">
+                <section class="answer">
+                    <button id="boton-continuar4" style="display: none;" onclick="finishClass()">Continuar con la clase</button>
+                </section>
+              </section>
+              <br><br><br>
+              <section id="chat-area" style="display: flex; flex-direction: column;">
+                <section id="resultado-1-1-2">
+                    <p><span id="resultado5"></span></p>
                 </section>
               </section>
               <section id="answer-area" style="display: flex; flex-direction: column;">
@@ -155,7 +177,7 @@
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado2").textContent = "Esperando respuesta...";
 
-          let message = "Da la relacion de la quimica on otras ciencias y tambien la importancia y campo de accion de la quimica";
+          let message = "Para la medicion de gases explica la Ley de Boyle y la Ley de Charles";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',
@@ -188,13 +210,13 @@
           });
         }
 
-        function finishClass() {
+        function continueClass2() {
           // Ocultar el GIF y mostrar el span
           document.getElementById("resultado3").style.display = "inline-block";
           // Establece el mensaje inicial cuando se hace clic en el botón
           document.getElementById("resultado3").textContent = "Esperando respuesta...";
 
-          let message = "Da los distintos sistemas de unidades que pueden ser usados en la quimica, asi como de que tipo son";
+          let message = "Para la medición de gases explica la Ley de Gay-Lussac y la Ley combinada de los gases";
 
           fetch('http://localhost:5000/get_gpt_response', {
               method: 'POST',
@@ -205,11 +227,11 @@
           })
           .then(response => response.json())
           .then(data => {
-            document.getElementById("resultado3").textContent = data.message;
+              // Actualiza el contenido del span con la respuesta de la API
+              document.getElementById("resultado3").textContent = data.message;
 
-              // Activar el botón de envío aquí
-              document.querySelector('.sendbutton').removeAttribute("disabled");
-
+              // Mostrar el botón de "Continuar con la clase" si la respuesta es exitosa
+              document.getElementById("boton-continuar3").style.display = "inline-block";
 
               // Desactiva el botón
               document.getElementById("boton-continuar2").setAttribute("disabled", "disabled");
@@ -220,6 +242,84 @@
           .catch((error) => {
               // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
               document.getElementById("resultado3").textContent = "Hubo un error al obtener la respuesta.";
+              console.error('Error:', error);
+
+              // Mantener el botón de "Continuar con la clase" oculto si hay un error
+              document.getElementById("boton-continuar3").style.display = "none";
+          });
+        }
+
+        function continueClass3() {
+          // Ocultar el GIF y mostrar el span
+          document.getElementById("resultado4").style.display = "inline-block";
+          // Establece el mensaje inicial cuando se hace clic en el botón
+          document.getElementById("resultado4").textContent = "Esperando respuesta...";
+
+          let message = "Para la medición de gases explica la Ley de Dalton de las presiones parciales, y tambien explica el principio de Avogadro y el volumen molar.";
+
+          fetch('http://localhost:5000/get_gpt_response', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ message: message }),
+          })
+          .then(response => response.json())
+          .then(data => {
+              // Actualiza el contenido del span con la respuesta de la API
+              document.getElementById("resultado4").textContent = data.message;
+
+              // Mostrar el botón de "Continuar con la clase" si la respuesta es exitosa
+              document.getElementById("boton-continuar4").style.display = "inline-block";
+
+              // Desactiva el botón
+              document.getElementById("boton-continuar3").setAttribute("disabled", "disabled");
+
+              // Opcional: Cambia el estilo del botón para que se vea desactivado
+              document.getElementById("boton-continuar3").style.opacity = 0.5;
+          })
+          .catch((error) => {
+              // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
+              document.getElementById("resultado4").textContent = "Hubo un error al obtener la respuesta.";
+              console.error('Error:', error);
+
+              // Mantener el botón de "Continuar con la clase" oculto si hay un error
+              document.getElementById("boton-continuar4").style.display = "none";
+          });
+        }
+
+        function finishClass() {
+          // Ocultar el GIF y mostrar el span
+          document.getElementById("resultado5").style.display = "inline-block";
+          // Establece el mensaje inicial cuando se hace clic en el botón
+          document.getElementById("resultado5").textContent = "Esperando respuesta...";
+
+          let message = "Explica la ley de los gase ideales, la densidad y peso molecular de los gases, y tambien explica las reacciones con intervención de gases con la estequiometría";
+
+          fetch('http://localhost:5000/get_gpt_response', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ message: message }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById("resultado5").textContent = data.message;
+
+              // Activar el botón de envío aquí
+              document.querySelector('.sendbutton').removeAttribute("disabled");
+
+
+              // Desactiva el botón
+              document.getElementById("boton-continuar4").setAttribute("disabled", "disabled");
+
+              // Opcional: Cambia el estilo del botón para que se vea desactivado
+              document.getElementById("boton-continuar4").style.opacity = 0.5;
+          })
+          .catch((error) => {
+              // Aquí puedes manejar el error, por ejemplo, mostrando un mensaje al usuario
+              document.getElementById("resultado5").textContent = "Hubo un error al obtener la respuesta.";
               console.error('Error:', error);
 
           });
