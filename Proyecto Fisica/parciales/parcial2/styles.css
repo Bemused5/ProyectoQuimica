@@ -88,6 +88,13 @@ button:focus {
   border-radius: 10px;
   padding-left: 15px;
 }
+.cajas-parciales {
+  transition: background-color 0.3s; /* Transición suave del cambio de color de fondo */
+}
+
+.cajas-parciales:hover {
+  background-color: #83c5f7; /* Color de fondo ligeramente blanco (iluminado) al pasar el ratón encima */
+}
 img{
   width: 100px;
 }
