@@ -5,7 +5,7 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-openai.api_key = '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'
+openai.api_key = ''
 
 @app.route('/get_gpt_response', methods=['POST'])
 def get_gpt_response():
