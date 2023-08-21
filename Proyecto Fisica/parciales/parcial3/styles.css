@@ -328,6 +328,7 @@ color: white;
   left: 0;
   border-bottom: groove;
   border-color: whitesmoke;
+  z-index: 1000;
   }
   
   .nav {
@@ -343,6 +344,9 @@ color: white;
   text-decoration: none;
   }
   
+  a{
+    text-decoration: none;
+  }
   .logo {
   font-size: 30px;
   font-weight: bold;
@@ -384,9 +388,8 @@ color: white;
   border: none;
   font-size: 30px;
   padding: 0 20px;
-  line-height: 60px;
   cursor: pointer;
-  
+  width: auto;
   display: none;
   }
   
@@ -468,6 +471,9 @@ color: white;
       font-size: 25px;
       padding: 0 20px;
       line-height: 60px;
+    }
+    button:hover{
+      background-color: white;  /* Un color más oscuro para el efecto hover */
     }
   
     .nav-menu {

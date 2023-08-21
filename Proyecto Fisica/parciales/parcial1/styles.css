@@ -49,6 +49,7 @@ button:hover{
   background-color: #02b57f;  /* Un color más oscuro para el efecto hover */
 }
 
+
 button:focus {
   outline: none;  /* Elimina el borde azul que aparece al hacer clic en el botón */
 }
@@ -304,6 +305,7 @@ color: white;
   left: 0;
   border-bottom: groove;
   border-color: whitesmoke;
+  z-index: 1000;
   }
   
   .nav {
@@ -317,6 +319,9 @@ color: white;
   .nav-link {
   color: black;
   text-decoration: none;
+  }
+  a{
+    text-decoration: none;
   }
   
   .logo {
@@ -360,11 +365,12 @@ color: white;
   border: none;
   font-size: 30px;
   padding: 0 20px;
-  line-height: 60px;
   cursor: pointer;
-  
   display: none;
+  width: auto;
   }
+
+
   
     h1{
     color: black;
@@ -444,6 +450,9 @@ color: white;
       font-size: 25px;
       padding: 0 20px;
       line-height: 60px;
+    }
+    button:hover{
+      background-color: white;  /* Un color más oscuro para el efecto hover */
     }
   
     .nav-menu {
